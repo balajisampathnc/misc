@@ -1,0 +1,32 @@
+" Vundle settings
+set nocompatible              " Required
+filetype off                  " Required
+
+" Set the runtime path to include Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+" Add more plugins here
+" Example:
+" Plugin 'tpope/vim-fugitive'
+
+Plugin 'preservim/nerdtree'
+Plugin 'ycm-core/YouCompleteMe'
+let g:ycm_python_interpreter_path = '/usr/bin/python3'
+
+" Enable LSP for Rust
+let g:ycm_language_server = [
+  \ { 'name': 'rust',
+  \   'filetypes': [ 'rust' ],
+  \   'cmdline': [ 'rust-analyzer' ] }
+  \ ]
+
+nmap <F3> :NERDTreeToggle<CR>
+
+call vundle#end()            " Required
+filetype plugin indent on    " Required
+
+
